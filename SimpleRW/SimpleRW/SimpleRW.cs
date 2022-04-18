@@ -11,10 +11,13 @@ namespace SimpleRW
         {
             try
             {
-                string fileInputPath = @"C:\\Users\\Ivan\\Desktop\\New Text Document Input.txt";
-                string fileOutputPath = @"C:\\Users\\Ivan\\Desktop\\New Text Document Output.txt";
-                long fileLength = new FileInfo(fileInputPath).Length;
-#if !DEBUG
+                string fileInputPath, fileOutputPath;
+                long fileLength;
+#if DEBUG
+                fileInputPath = @"C:\\Users\\Ivan\\Desktop\\New Text Document Input.txt";
+                fileOutputPath = @"C:\\Users\\Ivan\\Desktop\\New Text Document Output.txt";
+                fileLength = new FileInfo(fileInputPath).Length;
+#else
                 Console.WriteLine("Input file: ");
                 fileInputPath = Console.ReadLine();
                 Console.WriteLine("Output file: ");
